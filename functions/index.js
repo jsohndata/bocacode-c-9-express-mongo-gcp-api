@@ -11,8 +11,8 @@ app.use (cors());
 /* Route: Root
 ****************************************** */
 app.get("/", (req,res) => {
-    res.send("MongoDB: I am root.");
-    console.log(`MongoDB: I am root.`)
+    res.send("MongoDB. I am root.");
+    console.log(`MongoDB. I am root.`)
 });
 
 /* Route: Others
