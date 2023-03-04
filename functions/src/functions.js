@@ -1,4 +1,5 @@
 import { dbConnect } from "./dbConnect.js";
+import { ObjectId } from "mongodb";
 
 const collectionName = "mock_data";
 
@@ -60,11 +61,11 @@ export async function postDoc(req, res) {
 
 // Delete
 export async function deleteDoc(req, res) {
-    const searchParam = { id: Number(req.params.docId) };
+    const docId = { "_id": new ObjectId(req.params.docId) };
 
     const db = dbConnect();
     const collection = await db.collection(collectionName)
-        .deleteOne( searchParam )        
+        .deleteOne( docId )        
         .catch(err => {
             res.status(500).send(err);
             return
