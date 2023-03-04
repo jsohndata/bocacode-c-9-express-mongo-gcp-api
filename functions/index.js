@@ -1,7 +1,6 @@
 import functions  from "firebase-functions";
 import express from "express";
 import cors from "cors";
-import path from "path";
 import { getAllDoc, postDoc, getDoc, deleteDoc } from "./src/functions.js"
 
 const app = express();
